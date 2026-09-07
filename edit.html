@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Task</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <section class="edit-card">
+
+        <h1>✏️ Edit Study Task</h1>
+
+        <p>
+            Update your task details below.
+        </p>
+
+
+        <form
+            action="{{ url_for('edit_task', task_id=task.id) }}"
+            method="POST">
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value="{{ task.subject }}"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="topic">
+                    Topic
+                </label>
+
+                <input
+                    type="text"
+                    id="topic"
+                    name="topic"
+                    value="{{ task.topic }}"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="date">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value="{{ task.date }}"
+                    required>
+
+            </div>
+
+
+            <div class="edit-actions">
+
+                <button
+                    type="submit"
+                    class="add-button">
+
+                    💾 Save Changes
+
+                </button>
+
+
+                <a
+                    href="{{ url_for('home') }}"
+                    class="cancel-button">
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+</body>
+
+</html>
